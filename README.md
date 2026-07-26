@@ -70,6 +70,18 @@ With built-in authentication, a dynamic dashboard, and responsive UI using Boots
 
 ---
 
+## 🏛️ Architecture
+
+The application is built using the **Model-View-Controller (MVC)** architectural pattern:
+- **Models:** Represent the domain entities (Books, Students, etc.) and handle data logic. Mapped to SQL Server using Entity Framework Core.
+- **Views:** Built with Razor syntax (`.cshtml`), rendering dynamic HTML via Bootstrap 5 and handling the user interface.
+- **Controllers:** Handle incoming HTTP requests, interact with the Models/Database Context, and return the appropriate Views or responses.
+- **ViewModels:** Specialized DTOs used to pass tailored data between Controllers and Views, ensuring separation of concerns and data security.
+
+The system utilizes **Dependency Injection (DI)** (built into .NET Core) to inject the database context and other services into controllers, promoting loose coupling and maintainability.
+
+---
+
 ## 📸 Screenshots
 
 > *Note: These are mock screenshots illustrating the modern UI of the application.*
@@ -179,6 +191,15 @@ Building this project helped reinforce the following concepts:
 - Securing web applications with authentication.
 - Developing responsive and user-friendly interfaces using Bootstrap 5 and Razor Views.
 - Form validation and data binding in .NET.
+
+---
+
+## 🤝 Acknowledgements
+
+- [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core)
+- [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core)
+- [Bootstrap 5](https://getbootstrap.com/)
+- [Shields.io](https://shields.io/) for repository badges
 
 ---
 
