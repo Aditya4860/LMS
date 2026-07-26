@@ -72,13 +72,17 @@ With built-in authentication, a dynamic dashboard, and responsive UI using Boots
 
 ## 📸 Screenshots
 
-> *Note: Replace these placeholders with actual screenshots of your application.*
+> *Note: These are mock screenshots illustrating the modern UI of the application.*
 
-| Dashboard | Books List |
+| Dashboard | Books Module |
 | :---: | :---: |
-| ![Dashboard Placeholder](https://via.placeholder.com/600x350.png?text=Dashboard+Screenshot) | ![Books List Placeholder](https://via.placeholder.com/600x350.png?text=Books+List+Screenshot) |
-| **Borrow & Return** | **Student Record** |
-| ![Borrow Return Placeholder](https://via.placeholder.com/600x350.png?text=Borrow+Return+Screenshot) | ![Student Record Placeholder](https://via.placeholder.com/600x350.png?text=Student+Record+Screenshot) |
+| ![Dashboard](README/dashboard.png) | ![Books List](README/books.png) |
+| **Borrow Module** | **Student Module** |
+| ![Borrow Module](README/borrow.png) | ![Student Module](README/student.png) |
+| **Librarian Module** | **Publication Module** |
+| ![Librarian Module](README/librarian.png) | ![Publication Module](README/publication.png) |
+| **Login Page** | |
+| ![Login Page](README/login.png) | |
 
 ---
 
