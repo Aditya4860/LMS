@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using LibraryManagement.MVC.Data;
 using LibraryManagement.MVC.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.MVC
 {
@@ -9,7 +10,7 @@ namespace LibraryManagement.MVC
     {
         public static void Seed(LibraryDbContext context)
         {
-            context.Database.EnsureCreated();
+            context.Database.Migrate();
 
             if (!context.Books.Any())
             {
