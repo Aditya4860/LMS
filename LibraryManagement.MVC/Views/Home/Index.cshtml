@@ -1,258 +1,208 @@
 @{
-    ViewData["Title"] = "Welcome to Central Library";
+    Layout = null;
+    ViewData["Title"] = "MPOnline - Next-Generation Citizen Portal";
 }
 
-<!-- Hero Section -->
-<section class="bg-primary text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);">
-    <div class="container position-relative py-5">
-        <div class="row align-items-center text-center text-lg-start">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-                <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-4">
-                    <i class="bi bi-book-half fs-1 me-3 text-white"></i>
-                    <h2 class="fw-bold mb-0 text-white">Central Library</h2>
-                </div>
-                <h1 class="display-4 fw-bold mb-4" style="line-height: 1.2;">
-                    Your Gateway to <br/><span class="text-white-50">Infinite Knowledge</span>
-                </h1>
-                <p class="lead mb-4 text-white-50" style="font-size: 1.25rem;">
-                    Discover, borrow, and manage knowledge seamlessly. A unified platform designed exclusively for modern students and librarians.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    
+    <!-- Custom Design System CSS -->
+    <link rel="stylesheet" href="~/css/styles/variables.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles/theme.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles/layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles/components.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles/animations.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles/landing.css" asp-append-version="true" />
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .landing-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(247, 247, 247, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-section {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% -20%, rgba(91, 124, 250, 0.15), transparent 60%);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-pill);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #111111 0%, #4A65D1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        .features-section {
+            padding: 6rem 2rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+        .feature-card {
+            padding: 2rem;
+            text-align: left;
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(91, 124, 250, 0.1);
+            color: var(--accent-color);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .cta-section {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: var(--text-primary);
+            color: #fff;
+        }
+        .cta-section h2 {
+            color: #fff;
+            font-size: 3rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="landing-nav animate-fade-in">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 36px; height: 36px; background: var(--text-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">
+                <i data-lucide="book"></i>
+            </div>
+            <span style="font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em;">MPOnline</span>
+        </div>
+        <div style="display: flex; gap: 2rem; font-weight: 500; color: var(--text-secondary);">
+            <a href="#features" style="color: inherit;">Features</a>
+            <a href="#services" style="color: inherit;">Services</a>
+            <a href="#about" style="color: inherit;">About</a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <a href="/Account/Login" class="btn btn-secondary">Login</a>
+            <a href="/Account/Register" class="btn btn-primary">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="hero-section animate-fade-in stagger-1">
+        <div class="hero-badge hover-scale">
+            <span style="display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-color);"></span>
+            MPOnline v2.0 is now live
+        </div>
+        <h1 class="hero-title">Knowledge infrastructure<br/>for the modern world.</h1>
+        <p class="hero-subtitle">
+            Seamlessly access, manage, and discover millions of resources. A unified digital platform engineered for speed, reliability, and beauty.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+            <a href="/Account/Login" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
+                Enter Portal <i data-lucide="arrow-right" style="width: 18px; margin-left: 8px;"></i>
+            </a>
+            <a href="#features" class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1rem;">
+                Explore Features
+            </a>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; letter-spacing: -0.03em;">Engineered for efficiency</h2>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 1rem auto 0; font-size: 1.125rem;">
+                    Everything you need to manage your library resources, encapsulated in one beautifully designed platform.
                 </p>
-                <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                    <a asp-controller="Account" asp-action="Login" class="btn btn-light text-primary btn-lg fw-bold px-4 py-2 rounded-pill shadow-sm">
-                        <i class="bi bi-box-arrow-in-right me-2"></i>Login
-                    </a>
-                    <a href="#features" class="btn btn-outline-light btn-lg px-4 py-2 rounded-pill shadow-sm">
-                        Explore Library
-                    </a>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="feature-icon"><i data-lucide="search"></i></div>
+                        <h3 style="font-size: 1.25rem;">Instant Search</h3>
+                        <p style="font-size: 0.9375rem; margin-bottom: 0;">Locate any book, magazine, or newspaper instantly across our comprehensive catalog.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="feature-icon"><i data-lucide="zap"></i></div>
+                        <h3 style="font-size: 1.25rem;">Lightning Fast</h3>
+                        <p style="font-size: 0.9375rem; margin-bottom: 0;">Built on modern architecture, ensuring zero latency when borrowing or returning items.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                        <h3 style="font-size: 1.25rem;">Secure Identity</h3>
+                        <p style="font-size: 0.9375rem; margin-bottom: 0;">Enterprise-grade security and role-based access control for students and administrators.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-5 d-none d-lg-block text-center">
-                <img src="https://ui-avatars.com/api/?name=Central+Library&background=fff&color=0d6efd&rounded=true&size=300" alt="Library Logo" class="img-fluid floating-animation shadow-lg" style="border-radius: 50%; border: 8px solid rgba(255,255,255,0.2);" />
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to transform your library?</h2>
+            <p style="color: rgba(255,255,255,0.7); font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem;">
+                Join thousands of students and librarians utilizing MPOnline daily.
+            </p>
+            <a href="/Account/Login" class="btn btn-accent" style="padding: 1rem 2.5rem; font-size: 1rem; color: white !important;">
+                Start Building Today
+            </a>
+        </div>
+    </section>
 
-<!-- Featured Books Section -->
-<section id="featured-books" class="py-5 bg-white">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">Featured Books</h2>
-            <p class="text-muted">Discover our most popular and highly rated additions.</p>
+    <footer style="padding: 4rem 2rem; background: var(--bg-color); border-top: 1px solid var(--border-color); text-align: center;">
+        <div class="container">
+            <div style="width: 32px; height: 32px; background: var(--text-primary); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: white; margin-bottom: 1.5rem;">
+                <i data-lucide="book" style="width: 16px; height: 16px;"></i>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.875rem;">&copy; @DateTime.Now.Year MPOnline. All rights reserved.</p>
         </div>
-        <div class="row g-4">
-            <!-- Static Placeholders since we can't modify business logic -->
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 text-center hover-lift">
-                    <div class="card-body p-4">
-                        <div class="bg-primary bg-opacity-10 text-primary p-4 rounded-3 mb-3 mx-auto" style="width: 80px;">
-                            <i class="bi bi-book fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">Clean Code</h5>
-                        <p class="small text-muted mb-0">Robert C. Martin</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 text-center hover-lift">
-                    <div class="card-body p-4">
-                        <div class="bg-primary bg-opacity-10 text-primary p-4 rounded-3 mb-3 mx-auto" style="width: 80px;">
-                            <i class="bi bi-journal-code fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">The Pragmatic Programmer</h5>
-                        <p class="small text-muted mb-0">Andrew Hunt</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 text-center hover-lift">
-                    <div class="card-body p-4">
-                        <div class="bg-primary bg-opacity-10 text-primary p-4 rounded-3 mb-3 mx-auto" style="width: 80px;">
-                            <i class="bi bi-layout-wtf fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">Design Patterns</h5>
-                        <p class="small text-muted mb-0">Erich Gamma</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 text-center hover-lift">
-                    <div class="card-body p-4">
-                        <div class="bg-primary bg-opacity-10 text-primary p-4 rounded-3 mb-3 mx-auto" style="width: 80px;">
-                            <i class="bi bi-code-slash fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">Refactoring</h5>
-                        <p class="small text-muted mb-0">Martin Fowler</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </footer>
 
-<!-- Library Features Section -->
-<section id="features" class="py-5 bg-light">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">Library Features</h2>
-            <p class="text-muted">A powerful suite of tools to manage your resources efficiently.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 h-100 text-center p-4 hover-lift">
-                    <div class="mb-3">
-                        <div class="d-inline-block bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
-                            <i class="bi bi-search fs-1"></i>
-                        </div>
-                    </div>
-                    <h4 class="fw-bold">Smart Search</h4>
-                    <p class="text-muted mb-0">Instantly find books, magazines, and newspapers across the entire catalog.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 h-100 text-center p-4 hover-lift">
-                    <div class="mb-3">
-                        <div class="d-inline-block bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
-                            <i class="bi bi-phone-fill fs-1"></i>
-                        </div>
-                    </div>
-                    <h4 class="fw-bold">Mobile Ready</h4>
-                    <p class="text-muted mb-0">Access your library dashboard on any device with our fully responsive design.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 h-100 text-center p-4 hover-lift">
-                    <div class="mb-3">
-                        <div class="d-inline-block bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
-                            <i class="bi bi-graph-up fs-1"></i>
-                        </div>
-                    </div>
-                    <h4 class="fw-bold">Real-time Stats</h4>
-                    <p class="text-muted mb-0">Monitor borrowing trends, fine collections, and inventory at a glance.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Statistics Section -->
-<section class="py-5 bg-white border-top border-bottom">
-    <div class="container py-3">
-        <div class="row text-center g-4">
-            <div class="col-6 col-md-3">
-                <h2 class="display-5 fw-bold text-primary mb-0">10k+</h2>
-                <p class="text-muted fw-500 text-uppercase small">Books</p>
-            </div>
-            <div class="col-6 col-md-3">
-                <h2 class="display-5 fw-bold text-primary mb-0">5k+</h2>
-                <p class="text-muted fw-500 text-uppercase small">Students</p>
-            </div>
-            <div class="col-6 col-md-3">
-                <h2 class="display-5 fw-bold text-primary mb-0">15+</h2>
-                <p class="text-muted fw-500 text-uppercase small">Departments</p>
-            </div>
-            <div class="col-6 col-md-3">
-                <h2 class="display-5 fw-bold text-primary mb-0">24/7</h2>
-                <p class="text-muted fw-500 text-uppercase small">Digital Access</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Announcements Section -->
-<section class="py-5 bg-light">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">Latest Announcements</h2>
-            <p class="text-muted">Stay up to date with library events and notices.</p>
-        </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-8">
-                <div class="card border-0 shadow-sm rounded-4 mb-3 border-start border-primary border-4 hover-lift">
-                    <div class="card-body p-4 d-flex align-items-center">
-                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle me-4">
-                            <i class="bi bi-megaphone-fill fs-3"></i>
-                        </div>
-                        <div>
-                            <h5 class="fw-bold mb-1 text-dark">Extended Exam Hours</h5>
-                            <p class="text-muted mb-0">The library will remain open until midnight during the final exam weeks.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-0 shadow-sm rounded-4 border-start border-primary border-4 hover-lift">
-                    <div class="card-body p-4 d-flex align-items-center">
-                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle me-4">
-                            <i class="bi bi-journal-bookmark-fill fs-3"></i>
-                        </div>
-                        <div>
-                            <h5 class="fw-bold mb-1 text-dark">New Digital Archives</h5>
-                            <p class="text-muted mb-0">We have partnered with leading digital publishers to bring 1,000+ new magazines online.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About & Contact Section -->
-<section class="py-5 bg-white">
-    <div class="container py-4">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <h2 class="fw-bold text-primary mb-3">About Central Library</h2>
-                <p class="text-muted lead mb-4">Dedicated to providing the best knowledge resources for our community, offering an extensive collection of books, digital magazines, and national newspapers.</p>
-                <ul class="list-unstyled mb-4">
-                    <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-3 fs-5"></i> <span class="fw-500 text-dark">Modern study spaces with Wi-Fi</span></li>
-                    <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-3 fs-5"></i> <span class="fw-500 text-dark">Extensive digital catalog access</span></li>
-                    <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-3 fs-5"></i> <span class="fw-500 text-dark">Fully automated borrowing system</span></li>
-                </ul>
-            </div>
-            <div class="col-lg-5 offset-lg-1">
-                <div class="card border-0 shadow-lg rounded-4 bg-primary text-white">
-                    <div class="card-body p-5">
-                        <h3 class="fw-bold mb-4">Contact Us</h3>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-geo-alt-fill fs-4 me-3 text-white-50"></i>
-                            <span>123 University Campus, Academic Block A</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-envelope-fill fs-4 me-3 text-white-50"></i>
-                            <span>library@university.edu</span>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-telephone-fill fs-4 me-3 text-white-50"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-dark text-center text-white-50 py-4">
-    <div class="container">
-        <p class="mb-0">&copy; @DateTime.Now.Year <span class="text-white">Central Library</span>. All rights reserved.</p>
-    </div>
-</footer>
-
-<style>
-    .floating-animation {
-        animation: float 6s ease-in-out infinite;
-    }
-    @@keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
-    }
-    .hover-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.15)!important;
-    }
-    body { background: #fff !important; }
-</style>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
