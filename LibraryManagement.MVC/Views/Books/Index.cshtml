@@ -59,14 +59,15 @@
                                 }
                                 else if (!string.IsNullOrEmpty(book.ISBN))
                                 {
+                                    var initials = book.Title != null && book.Title.Length >= 2 ? book.Title.Substring(0, 2).Replace("'", "").Replace("\"", "") : "BK";
                                     <img src="https://covers.openlibrary.org/b/isbn/@(book.ISBN)-S.jpg?default=false" 
-                                         onerror="this.onerror=null; this.outerHTML='<div style=&quot;width: 40px; height: 56px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text-secondary);&quot;>Cover</div>';" 
+                                         onerror="this.onerror=null; this.outerHTML='<div style=&quot;width: 40px; height: 56px; background: linear-gradient(135deg, var(--accent-color), #2563eb); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; color: white; box-shadow: var(--shadow-sm); text-transform: uppercase;&quot; title=&quot;Cover&quot;>@initials</div>';" 
                                          alt="Cover" style="width: 40px; height: 56px; object-fit: cover; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);" />
                                 }
                                 else
                                 {
-                                    <div style="width: 40px; height: 56px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text-secondary);">
-                                        Cover
+                                    <div style="width: 40px; height: 56px; background: linear-gradient(135deg, var(--accent-color), #2563eb); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; color: white; box-shadow: var(--shadow-sm); text-transform: uppercase;" title="@book.Title">
+                                        @(book.Title != null && book.Title.Length >= 2 ? book.Title.Substring(0, 2) : "BK")
                                     </div>
                                 }
                             </td>

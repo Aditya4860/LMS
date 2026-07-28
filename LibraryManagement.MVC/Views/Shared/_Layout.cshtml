@@ -21,6 +21,47 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    
+    <!-- Choices.js for modern select menus -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <style>
+        /* Custom Theme for Choices.js to match our design system */
+        .choices { margin-bottom: 0; }
+        .choices__inner {
+            background-color: var(--bg-color) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: var(--radius-md) !important;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-primary) !important;
+            box-shadow: var(--shadow-sm);
+        }
+        .choices[data-type*="select-one"]::after {
+            border-color: var(--text-secondary) transparent transparent transparent;
+        }
+        .choices.is-open[data-type*="select-one"]::after {
+            border-color: transparent transparent var(--text-secondary) transparent;
+        }
+        .choices__list--dropdown {
+            background-color: var(--bg-color) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: var(--radius-md) !important;
+            box-shadow: var(--shadow-md) !important;
+            color: var(--text-primary) !important;
+            margin-top: 4px;
+        }
+        .choices__list--dropdown .choices__item--selectable.is-highlighted {
+            background-color: var(--bg-hover) !important;
+            color: var(--text-primary) !important;
+        }
+        .choices__input {
+            background-color: var(--bg-color) !important;
+            color: var(--text-primary) !important;
+        }
+        .choices__input::placeholder { color: var(--text-secondary); }
+    </style>
 </head>
 <body>
     @if (User.Identity.IsAuthenticated)
@@ -164,6 +205,22 @@
                 const menu = document.getElementById('profileDropdownMenu');
                 if (menu) menu.style.display = 'none';
             }
+        });
+    </script>
+    
+    <!-- Choices.js Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Choices.js on all select elements with class 'form-select' or 'form-control'
+            const selectElements = document.querySelectorAll('select.form-select, select.form-control');
+            selectElements.forEach(function(el) {
+                new Choices(el, {
+                    searchEnabled: true,
+                    itemSelectText: '',
+                    shouldSort: false
+                });
+            });
         });
     </script>
     @RenderSection("Scripts", required: false)
