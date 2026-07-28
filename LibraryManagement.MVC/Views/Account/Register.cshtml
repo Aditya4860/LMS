@@ -37,7 +37,7 @@
         }
         .auth-illustration-side {
             flex: 1;
-            background: linear-gradient(135deg, #111111 0%, #2A3B8F 100%);
+            background: #000000;
             display: none;
             position: relative;
             overflow: hidden;
@@ -68,16 +68,16 @@
         <!-- Left Side: Form -->
         <div class="auth-form-side animate-fade-in">
             
-            <a href="/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 2rem;">
+            <a href="/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 2rem; text-decoration: none;">
                 <div style="width: 32px; height: 32px; background: var(--text-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
                     <i data-lucide="book" style="width: 16px; height: 16px;"></i>
                 </div>
-                MPOnline
+                LibrarySpace
             </a>
 
             <div>
                 <h1 style="font-size: 2rem; letter-spacing: -0.03em; margin-bottom: 0.5rem;">Create an account</h1>
-                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Join MPOnline to start managing your resources.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Join LibrarySpace to start managing your resources.</p>
 
                 <form asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                     
@@ -127,8 +127,7 @@
         
         <!-- Right Side: Illustration -->
         <div class="auth-illustration-side animate-fade-in stagger-2">
-            <div style="position: absolute; top: -10%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(91,124,250,0.4) 0%, transparent 70%);"></div>
-            <div style="position: absolute; bottom: -10%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(91,124,250,0.4) 0%, transparent 70%);"></div>
+            <!-- Removed blue gradients for complete black background -->
             
             <div class="auth-glass-box hover-scale">
                 <div style="width: 64px; height: 64px; background: rgba(255,255,255,0.1); border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">

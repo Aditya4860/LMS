@@ -16,12 +16,23 @@ namespace LibraryManagement.MVC.Controllers
         public HomeController(LibraryDbContext context) { _context = context; }
 
         [AllowAnonymous]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction(nameof(Dashboard));
             }
+
+            var totalBooks = await _context.Books.CountAsync();
+            var totalMagazines = await _context.Magazines.CountAsync();
+            var totalNewspapers = await _context.Newspapers.CountAsync();
+            var totalStudents = await _context.Students.CountAsync();
+            var totalBorrows = await _context.BorrowRecords.CountAsync();
+
+            ViewBag.TotalResources = totalBooks + totalMagazines + totalNewspapers;
+            ViewBag.TotalStudents = totalStudents;
+            ViewBag.TotalBorrows = totalBorrows;
+
             return View();
         }
 

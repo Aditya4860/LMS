@@ -2,7 +2,7 @@
 
 @{
     Layout = null; 
-    ViewData["Title"] = "Sign in - MPOnline";
+    ViewData["Title"] = "Sign in - LibrarySpace";
 }
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
         .auth-container {
             display: flex;
             min-height: 100vh;
-            background: linear-gradient(135deg, #111111 0%, #2A3B8F 100%);
+            background: #000000;
             align-items: center;
             justify-content: center;
             position: relative;
@@ -33,10 +33,10 @@
         }
         /* Background decorations */
         .bg-circle-1 {
-            position: absolute; top: -10%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(91,124,250,0.4) 0%, transparent 70%); pointer-events: none;
+            display: none;
         }
         .bg-circle-2 {
-            position: absolute; bottom: -10%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(91,124,250,0.4) 0%, transparent 70%); pointer-events: none;
+            display: none;
         }
 
         .auth-form-side {
@@ -56,6 +56,11 @@
         <!-- Decorative background elements -->
         <div class="bg-circle-1"></div>
         <div class="bg-circle-2"></div>
+        <!-- Back Button -->
+        <a href="/" style="position: absolute; top: 2rem; left: 2rem; display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; z-index: 20;">
+            <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+            Back to Home
+        </a>
         
         <!-- Center Box: Form -->
         <div class="auth-form-side animate-fade-in">
@@ -64,7 +69,7 @@
                 <div style="width: 32px; height: 32px; background: var(--text-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
                     <i data-lucide="book" style="width: 16px; height: 16px;"></i>
                 </div>
-                MPOnline
+                LibrarySpace
             </a>
 
             <div>
