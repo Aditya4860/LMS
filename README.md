@@ -53,7 +53,10 @@ Recently overhauled with a **premium, redesigned UI**, this platform delivers a 
 ![Landing Page](docs/screenshots/landing-page.png)
 
 ### Dashboard
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/dashboard1.png)
+
+![Dashboard](docs/screenshots/dashboard2.png)
+
 
 ### Login
 ![Login](docs/screenshots/login.png)
