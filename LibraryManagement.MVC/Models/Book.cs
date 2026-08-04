@@ -15,7 +15,6 @@ namespace LibraryManagement.MVC.Models
         [StringLength(150)]
         public string Author { get; set; }
 
-        // ISBN can now be NULL in the database
         public string? ISBN { get; set; }
 
         [Required]
@@ -30,7 +29,6 @@ namespace LibraryManagement.MVC.Models
 
         public bool IsAvailable { get; set; } = true;
 
-        // New fields
         [StringLength(200)]
         public string? Publisher { get; set; }
 

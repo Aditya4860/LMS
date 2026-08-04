@@ -1,19 +1,29 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: '[FEATURE] '
-labels: 'enhancement'
-assignees: ''
+name: Feature Request
+about: Propose a new feature or enhancement
+title: "feat: "
+labels: enhancement
+assignees: Aditya4860
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Problem Statement
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+> Describe the problem or limitation this feature would address. What are you trying to do that is currently not possible?
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Proposed Solution
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+> Describe the feature you'd like. Be as specific as possible.
+
+## Alternatives Considered
+
+> Are there other approaches you've considered? Why are they insufficient?
+
+## Scope
+
+- [ ] Small — affects a single view or controller
+- [ ] Medium — spans multiple modules
+- [ ] Large — requires schema or architecture changes
+
+## Additional Context
+
+> Mockups, references, or examples that would help clarify the request.
